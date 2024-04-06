@@ -1,0 +1,18 @@
+{
+  "name": "automatic-octo-broccoli",
+  "version": "1.0.0",
+  "description": "WPP Chat Bot para o PIME IV",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cafe Sem Acucar - BA2024",
+  "license": "ISC",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
