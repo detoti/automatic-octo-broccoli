@@ -4,10 +4,10 @@ export default function welcomeMessageUpsert(sock) {
 		if (messages && messages.length > 0) {
 			for (const message of messages) {
 				const { message: messageContent, key: { remoteJid } } = message || {}; // Obtém remoteJid do remetente
-				if (messageContent && messageContent.conversation === "!pime") {
+				if (messageContent && messageContent.conversation === "!programação") {
 					console.log("Bem-Vindo");
 					await sock.sendMessage(remoteJid, {
-						text: "🎓🖥️ Bem vind@!\n\nVocê está buscando aprender programação de forma gratuita?\n\nTemos ótimas novidades para vocês! Estão disponíveis diversos cursos gratuitos para quem quer se aventurar no mundo da programação.\n\n🌟 Envie *_!cursos_* para receber nossa lista com os melhores cursos gratúitos!"
+						text: "🎓🖥️ Bem vind@!\n\nVocê está buscando aprender programação de forma gratuita?\n\nTemos ótimas novidades para vocês! Estão disponíveis diversos cursos gratuitos para quem quer se aventurar no mundo da programação.\n\n🌟 Envie *_!começar_* para começar sua jornada de estudos!"
 					});
 				}
 			}

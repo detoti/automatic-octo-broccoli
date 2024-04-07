@@ -1,5 +1,6 @@
 import { makeWASocket, DisconnectReason, useMultiFileAuthState } from "@whiskeysockets/baileys";
 import welcomeMessageUpsert from "./src/socks/bemvindo.js";
+import mainMenuMessageUpsert from "./src/socks/menuprincial.js";
 
 async function connectWA() {
 	const { state, saveCreds } = await useMultiFileAuthState("auth_info_baileys")
@@ -25,6 +26,7 @@ async function connectWA() {
 
 	//ADD SOCKS HERE
 	welcomeMessageUpsert(sock);
+	mainMenuMessageUpsert(sock);
 
 	sock.ev.on("creds.update", saveCreds);
 }
