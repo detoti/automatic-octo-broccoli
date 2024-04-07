@@ -1,6 +1,7 @@
 {
   "name": "automatic-octo-broccoli",
   "version": "1.0.0",
+  "type": "module",
   "description": "WPP Chat Bot para o PIME IV",
   "main": "index.js",
   "scripts": {
