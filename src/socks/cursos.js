@@ -43,15 +43,11 @@ class Cursos {
 
     // Função para lidar com a escolha da área de atuação
     async handleAreaChoice(sock, remoteJid, area) {
-        // Verifica se a área escolhida é válida
         if (this.cursosPorArea[area]) {
-            // Monta a mensagem com a lista de cursos disponíveis na área escolhida
             let mensagem = `Cursos disponíveis em ${area}:\n\n`;
             this.cursosPorArea[area].forEach(curso => {
                 mensagem += `- ${curso.nome}: [Clique aqui](${curso.link})\n`;
             });
-
-            // Envia a mensagem para o usuário com a lista de cursos disponíveis
             await sock.sendMessage(remoteJid, {
                 text: mensagem
             });
@@ -62,7 +58,6 @@ class Cursos {
         }
     }
 
-    // Função para iniciar a interação com o usuário sobre a escolha da área de atuação
     async askAreaChoice(sock, remoteJid) {
         await sock.sendMessage(remoteJid, {
             text: "Por favor, escolha uma área de atuação:\n\n" +
