@@ -1,3 +1,5 @@
+import Cursos from "./Cursos.js";
+
 export default function mainMenuMessageUpsert(sock) {
     sock.ev.on("messages.upsert", async (messageInfoUpsert) => {
         const { messages } = messageInfoUpsert || {};
@@ -24,6 +26,9 @@ export default function mainMenuMessageUpsert(sock) {
                 if (userStates[remoteJid] === "esperandoEscolha" && messageContent && messageContent.conversation) {
                     const userChoice = messageContent.conversation.trim();
                     if (userChoice === "1") {
+						const cursos = new Cursos(); // Crie uma instância da classe Cursos
+                        await cursos.askAreaChoice(sock, remoteJid); // Pergunta ao usuário sobre a área de atuação
+                        userStates[remoteJid] = "escolhendoArea"; 
                         await sock.sendMessage(remoteJid, {
                             text: "Você escolheu 'Cursos'. Vamos te enviar informações sobre os cursos disponíveis."
                         });
