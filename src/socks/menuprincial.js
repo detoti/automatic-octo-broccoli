@@ -14,13 +14,13 @@ export default function mainMenuMessageUpsert(sock) {
                 if (messageContent && messageContent.conversation === "!começar") {
                     console.log("Menu Principal");
                     await sock.sendMessage(remoteJid, {
-                        text: "Menu Principal:\n\n" +
+                        text: "🎲 Menu Principal:\n\n" +
                               "1. Cursos\n" +
                               "2. Bootcamps\n" +
                               "3. Programas de mentorias\n" +
                               "4. Hackathons\n" +
                               "5. Vagas de emprego\n\n" +
-                              "Por favor, escolha uma opção respondendo com o número correspondente."
+                              "🪄 Por favor, escolha uma opção respondendo com o número correspondente."
                     });
 
                     userStates[remoteJid] = "esperandoEscolha";
